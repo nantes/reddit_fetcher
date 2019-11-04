@@ -30,4 +30,9 @@ export const fetchRedditError = error => ({
 export const sortReddit = sortValue => ({
   type: types.SORT_REDDIT,
   sortValue,
-})
+});
+
+export const openItem = urlItem => ({
+  type: types.OPEN_ITEM,
+  urlItem,
+});

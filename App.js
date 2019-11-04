@@ -7,11 +7,13 @@
  */
 import {Provider} from 'react-redux';
 import {store} from './src/store/store';
-import InitPage from './src/pages/InitPage.js';
 import React from 'react';
+import {createAppContainer} from 'react-navigation';
+import RootNavigator from './src/navigator';
+const App = createAppContainer(RootNavigator);
 
 export default () => (
   <Provider store={store}>
-    <InitPage />
+    <App />
   </Provider>
 );

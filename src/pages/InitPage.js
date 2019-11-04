@@ -11,23 +11,16 @@ import {fetchReddit} from '../actions';
 
 import Item from '../components/Item';
 import Sort from '../components/sort';
-
+import WebViewItem from '../components/webViewItem';
 class InitPage extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return this.props.isLoading ? (
+    return (
       <View>
-        <ActivityIndicator size="large" color="black" />
-        <Text>Loading...</Text>
-      </View>
-    ) : (
-      <View>
-        <View>
-          <Sort />
-        </View>
+        <Sort />
         {this.props.reddit.length > 0 && (
           <FlatList
             data={this.props.reddit}
@@ -46,14 +39,15 @@ class InitPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReddit()
+    this.props.fetchReddit();
   }
 }
 
 function mapStateToProps(state) {
   return {
-    reddit: state.reddit,
+    reddit: state.sortedReddit,
     isLoading: state.isLoading,
+    urlItem: state.urlItem,
   };
 }
 
