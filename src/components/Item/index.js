@@ -3,14 +3,16 @@ import {Text, View, Image, Linking, TouchableHighlight} from 'react-native';
 import Moment from 'moment';
 import styles from './styles';
 import {connect} from 'react-redux';
-import {openItem} from '../../actions';
+//import {openItem} from '../../actions';
 
 //TODO move to env
 const baseURL = 'https://reddit.com';
 
-//<TouchableHighlight onPress={() => Linking.openURL(url)}>
-
 class Item extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const {item} = this.props;
     const url = baseURL + item.permalink;
@@ -18,7 +20,7 @@ class Item extends React.Component {
     const redditImage = item.thumbnail;
     <Text style={styles.dateAgo}> submitted {dateAgo}</Text>;
     return (
-      <TouchableHighlight onPress={() => this.props.openItem(url)}>
+      <TouchableHighlight onPress={() => this.props.openUrl(url)}>
         <View style={styles.mainContainer}>
           <Image source={{uri: redditImage}} style={styles.image} />
           <View style={styles.redditContainer}>
@@ -36,7 +38,7 @@ class Item extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+/*function mapDispatchToProps(dispatch) {
   return {
     openItem: urlItem => dispatch(openItem(urlItem)),
   };
@@ -45,4 +47,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   null,
   mapDispatchToProps,
-)(Item);
+)(Item);*/
+
+export default Item;
