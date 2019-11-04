@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, Image, Linking, TouchableHighlight} from 'react-native';
 import Moment from 'moment';
+import styles from './styles';
 
 //TODO move to env
 const baseURL = 'https://reddit.com';
@@ -14,12 +15,12 @@ export default class Item extends React.Component {
     <Text style={styles.dateAgo}> submitted {dateAgo}</Text>;
     return (
       <TouchableHighlight onPress={() => Linking.openURL(url)}>
-        <View>
-          <Image source={{uri: redditImage}} />
-          <View>
-            <Text> submitted {dateAgo}</Text>
-            <Text> {item.title}</Text>
-            <View>
+        <View style={styles.mainContainer}>
+          <Image source={{uri: redditImage}} style={styles.image} />
+          <View style={styles.redditContainer}>
+            <Text style={styles.dateAgo}> submitted {dateAgo}</Text>
+            <Text style={styles.title}> {item.title}</Text>
+            <View style={styles.redditInfo}>
               <Text>by {item.author}</Text>
               <Text>Score: {item.score}</Text>
               <Text>Comments: {item.num_comments}</Text>
