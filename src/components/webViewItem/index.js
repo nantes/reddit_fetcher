@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {WebView} from 'react-native-webview';
+import styles from './styles';
 
 class WebViewItem extends Component {
   constructor(props) {
@@ -7,7 +8,9 @@ class WebViewItem extends Component {
   }
 
   render() {
-    return <WebView source={{uri: this.props.url}} style={{marginTop: 20}} />;
+    return (
+      <WebView source={{uri: this.props.url}} style={styles.mainCointainer} />
+    );
   }
 }
 

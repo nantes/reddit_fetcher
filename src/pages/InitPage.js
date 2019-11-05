@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FlatList,
-  ActivityIndicator,
-  Text,
-  RefreshControl,
-  View,
-} from 'react-native';
+import {FlatList, RefreshControl, View} from 'react-native';
 import {connect} from 'react-redux';
 import {fetchReddit, openItem} from '../actions';
 

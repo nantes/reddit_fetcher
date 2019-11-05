@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  FlatList,
-  ActivityIndicator,
-  Text,
-  RefreshControl,
-  View,
-} from 'react-native';
 import {connect} from 'react-redux';
-import {fetchReddit} from '../actions';
 
 import WebViewItem from '../components/webViewItem';
 

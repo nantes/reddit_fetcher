@@ -15,7 +15,6 @@ export default function fetchRedditReducer(state = initialState, action) {
     case types.FETCH_REDDIT:
       return {...state, isLoading: true};
     case types.FETCH_REDDIT_SUCCESS:
-      //const sortedReddit = selectorSortReddit(action.reddit, state.sortValue);
       return {
         ...state,
         reddit: [...action.reddit],
@@ -25,7 +24,6 @@ export default function fetchRedditReducer(state = initialState, action) {
     case types.FETCH_REDDIT_ERROR:
       return {...state, error: action.error, isLoading: false};
     case types.SORT_REDDIT:
-      //const sortedReddit = selectorSortReddit(state.reddit, action.sortValue);
       return {
         ...state,
         sortValue: action.sortValue,
