@@ -25,7 +25,9 @@ class Item extends React.Component {
           <Image source={{uri: redditImage}} style={styles.image} />
           <View style={styles.redditContainer}>
             <Text style={styles.dateAgo}> submitted {dateAgo}</Text>
-            <Text style={styles.title}> {item.title}</Text>
+            <Text style={styles.title} numberOfLines={1}>
+              {item.title}
+            </Text>
             <View style={styles.redditInfo}>
               <Text>by {item.author}</Text>
               <Text>Score: {item.score}</Text>

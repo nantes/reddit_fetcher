@@ -6,11 +6,12 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 15,
+    marginVertical: 8,
+    marginHorizontal: 16,
   },
   redditContainer: {
     flex: 1,
     flexDirection: 'column',
-    flexWrap: 'wrap',
   },
   dateAgo: {
     alignSelf: 'flex-end',
@@ -18,6 +19,7 @@ export default StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: '600',
+    flex: 1,
   },
   redditInfo: {
     flexDirection: 'row',
