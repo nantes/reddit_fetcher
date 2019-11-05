@@ -11,7 +11,6 @@ const initialState = {
 };
 
 export default function fetchRedditReducer(state = initialState, action) {
-  console.log('action ', action);
   switch (action.type) {
     case types.FETCH_REDDIT:
       return {...state, isLoading: true};

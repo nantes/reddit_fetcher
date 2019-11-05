@@ -17,7 +17,6 @@ class WebViewPage extends React.Component {
   }
 
   render() {
-    console.log('this ', this);
     return <WebViewItem url={this.props.urlItem} />;
   }
 }
