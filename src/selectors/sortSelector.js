@@ -2,16 +2,16 @@ export default (reddit, sortValue) => {
   reddit.sort((post1, post2) => {
     switch (sortValue) {
       case 'new':
-        return post1.data.created_utc < post2.data.created_utc ? -1 : 1;
+        return post1.data.created_utc < post2.data.created_utc;
       case 'top':
-        return post1.data.score > post2.data.score ? -1 : 1;
+        return post1.data.score > post2.data.score;
       case 'controversial':
-        return post1.data.score < post2.data.score &&
+        return (
+          post1.data.score < post2.data.score &&
           post1.data.num_comments > post2.data.num_comments
-          ? -1
-          : 1;
+        );
       case 'hot':
-        return post1.data.num_comments > post2.data.num_comments ? -1 : 1;
+        return post1.data.num_comments > post2.data.num_comments;
     }
   });
   return reddit;
