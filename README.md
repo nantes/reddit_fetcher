@@ -10,7 +10,7 @@ Simple Reddit client App created with React Native that gather https://api.reddi
 
 ## TO-DO
   * Unit testing
-  * Improve UI
+  * Improve UI (better User experience, refactor Picker or use another component, add ActivityIndicator for loading stages)
   * Improve sorting mostly for controversial topics without fetching  https://api.reddit.com/r/pics/controversial.json
   * some refactor for components (like item: would be nice to calculate the time outside the component)
   * implement sagas
